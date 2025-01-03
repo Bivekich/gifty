@@ -74,7 +74,7 @@ export default function Footer() {
           <motion.div variants={itemAnimation}>
             <h3 className="text-lg font-semibold mb-4">Документы</h3>
             <ul className="space-y-2">
-              {['terms', 'privacy', 'cookies'].map((link, index) => (
+              {['terms', 'privacy', 'cookies'].map((link) => (
                 <motion.li
                   key={link}
                   variants={itemAnimation}
@@ -102,7 +102,7 @@ export default function Footer() {
                 { href: 'https://vk.com', text: 'VK' },
                 { href: 'https://t.me', text: 'Telegram' },
                 { href: 'mailto:support@gifty.ru', text: 'support@gifty.ru' },
-              ].map((link, index) => (
+              ].map((link) => (
                 <motion.li
                   key={link.href}
                   variants={itemAnimation}
