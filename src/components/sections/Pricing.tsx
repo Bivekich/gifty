@@ -18,9 +18,9 @@ export default function Pricing() {
       ],
     },
     {
-      name: 'Праздничный',
+      name: 'Основной',
       price: '499 ₽',
-      description: 'За одно мероприятие',
+      description: 'Полный доступ',
       isPopular: true,
       features: [
         '1 рулетка',
@@ -29,20 +29,6 @@ export default function Pricing() {
         'Все шаблоны',
         'Срок действия 7 дней',
         'Кастомизация дизайна',
-      ],
-    },
-    {
-      name: 'Организатор',
-      price: '1499 ₽',
-      description: 'Пакет из 5 рулеток',
-      features: [
-        '5 разных рулеток',
-        'До 50 вариантов в каждой',
-        'Неограниченные прокрутки',
-        'Эксклюзивные шаблоны',
-        'Срок действия 30 дней',
-        'Брендирование',
-        'Приоритетная поддержка',
       ],
     },
   ];
@@ -87,7 +73,7 @@ export default function Pricing() {
           Выберите свой тариф
         </motion.h2>
         <motion.div
-          className="grid md:grid-cols-3 gap-8"
+          className="flex flex-col md:flex-row justify-center gap-8 max-w-5xl mx-auto"
           variants={containerAnimation}
           initial="hidden"
           whileInView="show"
@@ -96,7 +82,7 @@ export default function Pricing() {
           {plans.map((plan, index) => (
             <motion.div
               key={index}
-              className={`relative bg-white rounded-3xl shadow-lg overflow-hidden h-full flex flex-col ${
+              className={`relative bg-white rounded-3xl shadow-lg overflow-hidden h-full flex flex-col w-full md:w-[480px] ${
                 plan.isPopular ? 'md:scale-105' : ''
               }`}
               variants={cardAnimation}
@@ -107,9 +93,9 @@ export default function Pricing() {
               transition={{ type: 'spring', stiffness: 300, damping: 20 }}
             >
               {plan.isPopular && (
-                <div className="absolute top-4 right-4">
+                <div className="absolute top-4 right-4 z-10">
                   <motion.span
-                    className="inline-block bg-gradient-to-r from-pink-500 to-purple-500 text-white text-sm px-3 py-1 rounded-full"
+                    className="inline-block bg-gradient-to-r from-pink-500 to-purple-500 text-white text-sm px-4 py-1.5 rounded-full"
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
                     viewport={{ once: true }}
@@ -164,7 +150,7 @@ export default function Pricing() {
                   ))}
                 </motion.ul>
                 <Link
-                  href="/register"
+                  href="/dashboard"
                   className={`block w-full py-3 px-6 text-center rounded-full font-semibold transition-all ${
                     plan.isPopular
                       ? 'bg-white text-purple-600 hover:bg-pink-100'

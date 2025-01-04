@@ -1,7 +1,7 @@
 'use client';
 
-import Link from 'next/link';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 export default function Hero() {
   const giftAnimation = {
@@ -103,7 +103,7 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.5 }}
           >
             <Link
-              href="/create"
+              href="/dashboard"
               className="bg-white text-purple-600 px-8 py-4 rounded-full font-semibold inline-flex items-center hover:bg-pink-100 transition-colors"
             >
               <motion.span

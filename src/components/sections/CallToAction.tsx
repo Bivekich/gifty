@@ -79,7 +79,7 @@ export default function CallToAction() {
         </motion.h2>
         <motion.div variants={buttonAnimation}>
           <Link
-            href="/register"
+            href="/dashboard"
             className="group bg-white text-purple-600 px-8 py-4 rounded-full font-semibold inline-flex items-center hover:bg-pink-100 transition-all"
           >
             <motion.span

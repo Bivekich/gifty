@@ -1,20 +1,14 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
-import RootLayoutClient from './RootLayoutClient';
+import Navigation from '@/components/layout/Navigation';
+import Footer from '@/components/layout/Footer';
 
-const inter = Inter({
-  subsets: ['latin'],
-});
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Gifty - Создавайте волшебные моменты',
-  description:
-    'Создайте уникальную праздничную рулетку подарков для ваших близких',
-  icons: {
-    icon: '/favicon.ico',
-    apple: '/apple-icon.png',
-  },
+  title: 'Gifty - Генератор подарков',
+  description: 'Создайте свою рулетку подарков',
 };
 
 export default function RootLayout({
@@ -24,11 +18,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ru">
-      <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-      </head>
       <body className={inter.className}>
-        <RootLayoutClient>{children}</RootLayoutClient>
+        <Navigation />
+        {children}
+        <Footer />
       </body>
     </html>
   );

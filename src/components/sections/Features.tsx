@@ -5,28 +5,28 @@ import { motion } from 'framer-motion';
 export default function Features() {
   const features = [
     {
-      icon: '🎲',
-      title: 'Случайный выбор',
+      icon: '🎯',
+      title: 'Простота использования',
       description:
-        'Наша рулетка использует современный алгоритм случайного выбора, делая процесс полностью непредсказуемым и захватывающим',
+        'Создайте рулетку за пару минут и поделитесь ей с друзьями или коллегами',
     },
     {
       icon: '🎨',
-      title: 'Персонализация',
+      title: 'Красивый дизайн',
       description:
-        'Настройте внешний вид рулетки под любой праздник или событие',
+        'Множество готовых шаблонов и возможность настроить внешний вид под свои нужды',
     },
     {
       icon: '🔒',
       title: 'Безопасность',
       description:
-        'Все данные надежно защищены, а доступ к рулетке есть только у тех, кому вы отправили ссылку',
+        'Защита от накруток и честное распределение призов между участниками',
     },
     {
-      icon: '⚡',
-      title: 'Мгновенный результат',
+      icon: '🚀',
+      title: 'Быстрая работа',
       description:
-        'Создавайте рулетку за считанные минуты и сразу делитесь ею с друзьями',
+        'Мгновенная генерация результатов и плавная анимация вращения колеса',
     },
   ];
 
@@ -71,7 +71,7 @@ export default function Features() {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-pink-50">
+    <section className="py-20 bg-gradient-to-b from-white to-purple-50">
       <div className="container mx-auto px-4">
         <motion.h2
           className="text-4xl font-bold text-center mb-16 text-purple-800"
@@ -80,10 +80,10 @@ export default function Features() {
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.6 }}
         >
-          Почему выбирают Gifty
+          Почему выбирают нас
         </motion.h2>
         <motion.div
-          className="grid md:grid-cols-2 gap-12"
+          className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
           variants={containerAnimation}
           initial="hidden"
           whileInView="show"
@@ -92,7 +92,7 @@ export default function Features() {
           {features.map((feature, index) => (
             <motion.div
               key={index}
-              className="bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-3xl"
+              className="bg-white p-6 rounded-3xl shadow-lg"
               variants={cardAnimation}
               whileHover={{
                 y: -5,
@@ -105,7 +105,7 @@ export default function Features() {
               }}
             >
               <motion.div
-                className="text-3xl mb-4 inline-block"
+                className="text-4xl mb-4 inline-block"
                 variants={iconAnimation}
               >
                 {feature.icon}
